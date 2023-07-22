@@ -11,4 +11,4 @@ In the Examples folder there is an implimentation for a square based grid with o
 
 Click on a cell to set the start and click on a cell while holding left shift to set the end. Right click to clear selected cells. You can select multiple start cells by clicking multiple cells. The grid manager will then find the path using the A* algorithm and a priority queue min heap data structure. The example is set up in a threaded way so that all pathfinding happens outside of Unity's main player loop.
 
-![](https://github.com/FeralPug/PathFinding/blob/main/Example/SquareGrid/Demo/squareGridDemo.gif)
+![](https://github.com/FeralPug/Pathfinding/blob/cd90765aa1fa1985bda56ec9695fc59e18942ded/Demo/SquareExampleDemo.gif)
