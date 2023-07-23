@@ -221,14 +221,14 @@ namespace FeralPug.PathFinding.Example
 
             var width = maxCellWidth * gridProperties.cellSize * maxChunkWidth;
 
-            var dist = width / Mathf.Sin(Camera.main.fieldOfView / 2f);
+            var dist = (width * 1.25 / 2f) / Mathf.Tan(Mathf.Deg2Rad * Camera.main.fieldOfView / 2f);
 
             float horPos = gridProperties.cellDimensions.x * gridProperties.cellSize * gridProperties.chunkDimensions.x;
             horPos /= 2f;
             float vertPos = gridProperties.cellDimensions.y * gridProperties.cellSize * gridProperties.chunkDimensions.y;
             vertPos /= 2f;
 
-            Camera.main.transform.position = new Vector3(horPos, -dist, vertPos);
+            Camera.main.transform.position = new Vector3(horPos, dist, vertPos);
             Camera.main.transform.rotation = Quaternion.Euler(90, 0, 0);
         }
 
