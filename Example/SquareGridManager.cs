@@ -167,10 +167,14 @@ namespace FeralPug.PathFinding.Example
                 for(int i = 0; i <  StartCells.Count; i++)
                 {
                     PathRequest<SquareGridCell> pathRequest = new PathRequest<SquareGridCell>(StartCells[i], EndCell, (x, y) => DrawPath(x, y));
-                    ThreadStart threadStart = delegate {
-                        gridPathManager.FindPath(pathRequest, QueueResult);
-                    };
-                    threadStart.Invoke();
+                    
+                    Thread thread = new Thread(new ThreadStart(() =>
+                        {
+                            gridPathManager.FindPath(pathRequest, QueueResult);
+                        })
+                    );
+
+                    thread.Start();
                 }
             }
         }
